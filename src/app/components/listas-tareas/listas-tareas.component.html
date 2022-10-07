@@ -1,0 +1,26 @@
+<div class="container">
+    <h3 class="ml-3">Mis tareas</h3>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 mt-4" *ngFor = " let task of miTarea; let i = index">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>{{task.titulo}}</h5>
+                        <p class="card-text">{{task.descripcion}}</p>
+
+                        <hr>
+
+                        <div class="row justify-content-between container">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-dark" (click)= "getPositions(task.id)" data-toggle="modal" data-target="#editarModal">Editar</button> <!--Ingreso el modal que me permite visualizar el evento de editar la tarea-->
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-light ml-2" (click)= "deleteTask(i)">Delete</button> <!--Ingreso el modal que me permite visualizar el evento de editar la tarea-->                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
